@@ -3,6 +3,8 @@ import Header from '@/component/Header';
 import Portfolio from '@/component/Portfolio';
 import Services from '@/component/Services';
 import About from '@/component/About';
+import Footer from '@/component/Footer';
+import Contact from '@/component/Contact';
 
 
 export default function HomePage() {
@@ -11,9 +13,11 @@ export default function HomePage() {
       <div>
         <Navigation />
         <Header />
-        <Portfolio />
         <Services />
+        <Portfolio />
         <About />
+        <Contact />
+        <Footer />
       </div>
     </>
   );
