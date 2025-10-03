@@ -1,8 +1,8 @@
-import Navigation from '@/app/component/Navigation';
-import Header from '@/app/component/Header';
-import Portfolio from '@/app/component/Portfolio';
-import Services from '@/app/component/Services';
-import About from '@/app/component/About';
+import Navigation from './component/Navigation';
+import Header from './component/Header';
+import Portfolio from './component/Portfolio';
+import Services from './component/Services';
+import About from './component/About';
 
 
 export default function HomePage() {
