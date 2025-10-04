@@ -5,12 +5,14 @@ import Services from '@/component/Services';
 import About from '@/component/About';
 import Footer from '@/component/Footer';
 import Contact from '@/component/Contact';
+import AppAppBar from '@/component/AppAppbar';
 
 
 export default function HomePage() {
   return (
     <>
       <div>
+        <AppAppBar />
         <Navigation />
         <Header />
         <Services />

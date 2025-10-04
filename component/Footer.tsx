@@ -9,10 +9,7 @@ const Footer: FC = () => {
           <div>
             <div>
               <div>
-               
-                <script>
-                  document.write(new Date().getFullYear());
-                </script>2025
+               2025
               </div>
               <div>
                 <a href="#!" aria-label="X (Twitter)"><i
