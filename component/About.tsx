@@ -1,121 +1,102 @@
-import { FC } from "react";
+import { FC } from 'react';
+import { Box, Avatar, Container, Typography, Grid, useTheme } from '@mui/material';
+
+const timelineData = [
+  {
+    date: '2009-2011',
+    title: 'Our Humble Beginnings',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!',
+    image: '/media/about/1.jpg?width=160&height=160&rmode=stretch&token=abc',
+  },
+  {
+    date: 'March 2011',
+    title: 'An Agency is Born',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!',
+    image: '/media/about/2.jpg?width=160&height=160&rmode=stretch&token=abc',
+    inverted: true,
+  },
+  {
+    date: 'December 2015',
+    title: 'Transition to Full Service',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!',
+    image: '/media/about/3.jpg?width=160&height=160&rmode=stretch&token=abc',
+  },
+  {
+    date: 'July 2020',
+    title: 'Phase Two Expansion',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!',
+    image: '/media/about/4.jpg?width=160&height=160&rmode=stretch&token=abc',
+    inverted: true,
+  },
+];
 
 const About: FC = () => {
+
   return (
-    <>
-      <section id="about">
-        <div>
-          <div>
-            <h2>About</h2>
-            <h3>Lorem ipsum dolor sit amet consectetur.</h3>
-          </div>
-          <ul>
+    <Box component="section" id="about" py={10}>
+      <Container>
+        <Box textAlign="center" mb={6}>
+          <Typography variant="h4" fontWeight="bold" textTransform="uppercase">
+            About
+          </Typography>
+          <Typography variant="subtitle1" color="text.secondary">
+            Lorem ipsum dolor sit amet consectetur.
+          </Typography>
+        </Box>
 
-            <li>
-              <div>
-                <img
-                  src="/media/about/1.jpg?width=160&amp;height=160&amp;rmode=stretch&amp;token=5%2Bx0Mp4701LFdf%2F2eBBm%2BKe7BM1g15AtbUapKH2suuw%3D"
-                  alt=""
-                />
-              </div>
-              <div>
-                <div>
-                  <h4>2009-2011</h4>
-                  <h4>Our Humble Beginnings</h4>
-                </div>
-                <div>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut
-                    voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam,
-                    recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium
-                    consectetur!
-                  </p>
-                </div>
-              </div>
-            </li>
+        {timelineData.map((item, index) => (
+          <Grid
+            container
+            spacing={4}
+            direction={item.inverted ? 'row-reverse' : 'row'}
+            alignItems="center"
+            key={index}
+            mb={6}
+          >
+            <Grid size={{ xs: 12, md: 2 }}>
+              <Avatar
+                alt={item.title}
+                src={item.image}
+                sx={{
+                  width: 160,
+                  height: 160,
+                  margin: '0 auto',
+                  border: `4px solid`,
+                }}
+              />
+            </Grid>
 
-            <li>
-              <div>
-                <img
-                  src="/media/about/2.jpg?width=160&amp;height=160&amp;rmode=stretch&amp;token=5%2Bx0Mp4701LFdf%2F2eBBm%2BKe7BM1g15AtbUapKH2suuw%3D"
-                  alt=""
-                />
-              </div>
-              <div>
-                <div>
-                  <h4>March 2011</h4>
-                  <h4>An Agency is Born</h4>
-                </div>
-                <div>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut
-                    voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam,
-                    recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium
-                    consectetur!
-                  </p>
-                </div>
-              </div>
-            </li>
+            <Grid size={{ xs: 12, md: 10 }}>
+              <Box>
+                <Typography variant="h6" fontWeight="bold">
+                  {item.date}
+                </Typography>
+                <Typography variant="subtitle1" gutterBottom>
+                  {item.title}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  {item.description}
+                </Typography>
+              </Box>
+            </Grid>
+          </Grid>
+        ))}
 
-            <li>
-              <div>
-                <img
-                  src="/media/about/3.jpg?width=160&amp;height=160&amp;rmode=stretch&amp;token=5%2Bx0Mp4701LFdf%2F2eBBm%2BKe7BM1g15AtbUapKH2suuw%3D"
-                  alt=""
-                />
-              </div>
-              <div>
-                <div>
-                  <h4>December 2015</h4>
-                  <h4>Transition to Full Service</h4>
-                </div>
-                <div>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut
-                    voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam,
-                    recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium
-                    consectetur!
-                  </p>
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div>
-                <img
-                  src="/media/about/4.jpg?width=160&amp;height=160&amp;rmode=stretch&amp;token=5%2Bx0Mp4701LFdf%2F2eBBm%2BKe7BM1g15AtbUapKH2suuw%3D"
-                  alt=""
-                />
-              </div>
-              <div>
-                <div>
-                  <h4>July 2020</h4>
-                  <h4>Phase Two Expansion</h4>
-                </div>
-                <div>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut
-                    voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam,
-                    recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium
-                    consectetur!
-                  </p>
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div>
-                <h4>
-                  Be Part
-                  <br />Of Our
-                  <br />Story!
-                </h4>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </section>
-    </>
+        {/* Final call to action */}
+        <Box textAlign="center" mt={10}>
+          <Typography variant="h5" fontWeight="bold" whiteSpace="pre-line">
+            Be Part
+            {'\n'}Of Our
+            {'\n'}Story!
+          </Typography>
+        </Box>
+      </Container>
+    </Box>
   );
 };
+
 export default About;

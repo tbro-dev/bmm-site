@@ -9,14 +9,16 @@ import Contact from '@/component/Contact';
 
 export default function HomePage() {
   return (    
+    <>
       <div>
         <Navigation /> {/* done */}        
         <Header /> {/* done */}
         <Services /> {/* done */}
-        <Portfolio />
-        <About />
-        <Contact />
+        <Portfolio /> {/* done */}
+        <About /> {/* done */}
+        <Contact /> {/* done */}
         <Footer />
       </div>  
+    </>
   );
 }

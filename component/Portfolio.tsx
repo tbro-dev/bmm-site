@@ -58,7 +58,7 @@ const Portfolio: FC = () => {
 
         <Grid container spacing={4}>
           {portfolioItems.map(({ title, subtitle, img, modalId }, index) => (
-            <Grid item xs={12} sm={6} md={4} key={index}>
+            <Grid  size={{ xs: 12, sm: 6, md: 4 }} key={index}>
               <Box position="relative" sx={{ overflow: "hidden", borderRadius: 1 }}>
                 <a href={`#${modalId}`} data-bs-toggle="modal" style={{ display: "block", position: "relative" }}>
                   <Box

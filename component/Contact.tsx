@@ -1,98 +1,106 @@
-import { FC } from "react";
+'use client'
+import { FC, useState } from 'react';
+import {
+  Box,
+  Container,
+  Typography,
+  Grid,
+  TextField,
+  Button,
+} from '@mui/material';
 
 const Contact: FC = () => {
+  const [form, setForm] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle form submission logic here
+    console.log('Form submitted:', form);
+  };
+
   return (
-    <>
-      <section id="team">
-        <div>
-          <div>
-            <h2>Contact Our Amazing Team</h2>
-            <h3>Lorem ipsum dolor sit amet consectetur.</h3>
-          </div>
-          <div>
+    <Box component="section" id="contact" py={10}>
+      <Container maxWidth="md">
+        <Box textAlign="center" mb={6}>
+          <Typography variant="h4" fontWeight="bold" textTransform="uppercase">
+            Contact Us
+          </Typography>
+          <Typography variant="subtitle1" color="text.secondary">
+            Lorem ipsum dolor sit amet consectetur.
+          </Typography>
+        </Box>
 
-            <div>
-              <div>
-                <img
-                  src="/media/team/1.jpg?width=240&height=240&rmode=stretch&token=AgczX1LEMNExNmNmeOOmThRfXOTxpYj14U5JbF049kQ%3D"
-                  alt=""
-                />
-                <h4>Parveen Anand</h4>
-                <p>Lead Designer</p>
+        <form onSubmit={handleSubmit} noValidate>
+          <Grid container spacing={4}>
+            <Grid size={{ xs: 12, md: 4 }}>
+              <TextField
+                required
+                fullWidth
+                label="Your Name"
+                name="name"
+                value={form.name}
+                onChange={handleChange}
+              />
+            </Grid>
+            <Grid size={{ xs: 12, md: 4 }}>
+              <TextField
+                required
+                fullWidth
+                label="Your Email"
+                name="email"
+                type="email"
+                value={form.email}
+                onChange={handleChange}
+              />
+            </Grid>
+            <Grid size={{ xs: 12, md: 4 }}>
+              <TextField
+                required
+                fullWidth
+                label="Your Phone"
+                name="phone"
+                type="tel"
+                value={form.phone}
+                onChange={handleChange}
+              />
+            </Grid>
+            <Grid size={{ xs: 12, md: 4 }}>
+              <TextField
+                required
+                fullWidth
+                label="Your Message"
+                name="message"
+                multiline
+                rows={4}
+                value={form.message}
+                onChange={handleChange}
+              />
+            </Grid>
+          </Grid>
 
-                <a href="https://www.twitter.com/@" aria-label="Parveen Anand X (Twitter) Profile">
-                  <i className="fab fa-x-twitter"></i>
-                </a>
-
-                <a href="https://www.facebook.com/@" aria-label="Parveen Anand Facebook Profile">
-                  <i className="fab fa-facebook"></i>
-                </a>
-
-                <a href="https://www.linkedin.com/in/@" aria-label="Parveen Anand LinkedIn Profile">
-                  <i className="fab fa-linkedin"></i>
-                </a>
-              </div>
-            </div>
-
-            <div>
-              <div>
-                <img
-                  src="/media/team/2.jpg?width=240&height=240&rmode=stretch&token=AgczX1LEMNExNmNmeOOmThRfXOTxpYj14U5JbF049kQ%3D"
-                  alt=""
-                />
-                <h4>Diana Petersen</h4>
-                <p>Lead Marketer</p>
-
-                <a href="https://www.twitter.com/@" aria-label="Diana Petersen X (Twitter) Profile">
-                  <i className="fab fa-x-twitter"></i>
-                </a>
-
-                <a href="https://www.facebook.com/@" aria-label="Diana Petersen Facebook Profile">
-                  <i className="fab fa-facebook"></i>
-                </a>
-
-                <a href="https://www.linkedin.com/in/@" aria-label="Diana Petersen LinkedIn Profile">
-                  <i className="fab fa-linkedin"></i>
-                </a>
-              </div>
-            </div>
-
-            <div>
-              <div>
-                <img
-                  src="/media/team/3.jpg?width=240&height=240&rmode=stretch&token=AgczX1LEMNExNmNmeOOmThRfXOTxpYj14U5JbF049kQ%3D"
-                  alt=""
-                />
-                <h4>Larry Parker</h4>
-                <p>Lead Developer</p>
-
-                <a href="https://www.twitter.com/@" aria-label="Larry Parker X (Twitter) Profile">
-                  <i className="fab fa-x-twitter"></i>
-                </a>
-
-                <a href="https://www.facebook.com/@" aria-label="Larry Parker Facebook Profile">
-                  <i className="fab fa-facebook"></i>
-                </a>
-
-                <a href="https://www.linkedin.com/in/@" aria-label="Larry Parker LinkedIn Profile">
-                  <i className="fab fa-linkedin"></i>
-                </a>
-              </div>
-            </div>
-
-          </div>
-
-          <div>
-            <div>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque,
-                laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </>
+          <Box textAlign="center" mt={4}>
+            <Button
+              type="submit"
+              variant="contained"
+              color="primary"
+              size="large"
+              sx={{ textTransform: 'uppercase' }}
+            >
+              Send Message
+            </Button>
+          </Box>
+        </form>
+      </Container>
+    </Box>
   );
 };
 

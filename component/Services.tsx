@@ -39,7 +39,7 @@ const Services: FC = () => {
 
         <Grid container spacing={6} justifyContent="center">
           {serviceItems.map((service, index) => (
-            <Grid item xs={12} md={4} key={index} textAlign="center">
+            <Grid key={index} size={{ xs: 12, md: 4 }} textAlign="center">
               <Box position="relative" display="inline-block" mb={2}>
                 {/* Circle background + Icon */}
                 <FaCircle size={100} color="#1976d2" style={{ position: "absolute", left: 0, right: 0, margin: "0 auto", zIndex: 0 }} />
