@@ -1,49 +1,134 @@
-import { FC } from "react";
+'use client'
+import { FC, useState } from "react";
+import {
+  AppBar,
+  Box,
+  Container,
+  Drawer,
+  IconButton,
+  List,
+  ListItemButton,
+  ListItemText,
+  Toolbar,
+  Typography,
+  useTheme,
+  useMediaQuery,
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+
+const navItems = [
+  { label: "Services", href: "/#services" },
+  { label: "Portfolio", href: "/#portfolio" },
+  { label: "About", href: "/#about" },
+  { label: "Team", href: "/#team" },
+  { label: "Contact", href: "/#contact" },
+];
 
 const Navigation: FC = () => {
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
+  const handleDrawerToggle = () => {
+    setMobileOpen((prev) => !prev);
+  };
+
+  const drawer = (
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+      <Typography variant="h6" sx={{ my: 2 }}>
+        Busy Making Media
+      </Typography>
+      <List>
+        {navItems.map((item) => (
+          <ListItemButton
+            key={item.label}
+            component="a"
+            href={item.href}
+            sx={{ textAlign: "center" }}
+          >
+            <ListItemText primary={item.label} />
+          </ListItemButton>
+        ))}
+      </List>
+    </Box>
+  );
+
   return (
     <>
-      <nav id="mainNav">
-        <div>
-          <a href="/#page-top">Busy Making Media</a>
-          <button
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarResponsive"
-            aria-controls="navbarResponsive"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            Menu
-            <i aria-hidden="true"></i>
-          </button>
-          <div id="navbarResponsive">
-            <ul>
+      <AppBar
+        position="fixed"
+        sx={{
+          backgroundColor: "#212121", // dark navbar like Bootstrap dark
+        }}
+      >
+        <Container maxWidth="lg">
+          <Toolbar disableGutters sx={{ justifyContent: "space-between" }}>
+            <Typography
+              variant="h6"
+              component="a"
+              href="/#header"
+              sx={{
+                color: "inherit",
+                textDecoration: "none",
+                fontWeight: "bold",
+              }}
+            >
+              Busy Making Media
+            </Typography>
 
-              <li>
-                <a href="/#services" data-bs-target="#services">Services</a>
-              </li>
+            {isMobile ? (
+              <>
+                <IconButton
+                  color="inherit"
+                  edge="end"
+                  onClick={handleDrawerToggle}
+                  aria-label="open drawer"
+                >
+                  <MenuIcon />
+                </IconButton>
+              </>
+            ) : (
+              <Box sx={{ display: "flex", gap: 2 }}>
+                {navItems.map((item) => (
+                  <Typography
+                    key={item.label}
+                    component="a"
+                    href={item.href}
+                    sx={{
+                      color: "inherit",
+                      textDecoration: "none",
+                      textTransform: "uppercase",
+                      fontWeight: 500,
+                      "&:hover": {
+                        borderBottom: "2px solid white",
+                      },
+                    }}
+                  >
+                    {item.label}
+                  </Typography>
+                ))}
+              </Box>
+            )}
+          </Toolbar>
+        </Container>
+      </AppBar>
 
-              <li>
-                <a href="/#portfolio" data-bs-target="#portfolio">Portfolio</a>
-              </li>
+      <Box component="nav">
+        <Drawer
+          anchor="right"
+          open={mobileOpen}
+          onClose={handleDrawerToggle}
+          ModalProps={{ keepMounted: true }}
+          sx={{
+            "& .MuiDrawer-paper": { width: 240 },
+          }}
+        >
+          {drawer}
+        </Drawer>
+      </Box>
 
-              <li>
-                <a href="/#about" data-bs-target="#about">About</a>
-              </li>
-
-              <li>
-                <a href="/#team" data-bs-target="#team">Team</a>
-              </li>
-
-              <li>
-                <a href="/#contact" data-bs-target="#contact">Contact</a>
-              </li>
-
-            </ul>
-          </div>
-        </div>
-      </nav>
+      {/* Add spacer for fixed AppBar */}
+      <Toolbar />
     </>
   );
 };

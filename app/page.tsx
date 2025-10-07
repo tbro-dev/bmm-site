@@ -8,17 +8,15 @@ import Contact from '@/component/Contact';
 
 
 export default function HomePage() {
-  return (
-    <>
+  return (    
       <div>
-        <Navigation />
-        <Header />
-        <Services />
+        <Navigation /> {/* done */}        
+        <Header /> {/* done */}
+        <Services /> {/* done */}
         <Portfolio />
         <About />
         <Contact />
         <Footer />
-      </div>
-    </>
+      </div>  
   );
 }
