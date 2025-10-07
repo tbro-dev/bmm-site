@@ -19,8 +19,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 const navItems = [
   { label: "Services", href: "/#services" },
   { label: "Portfolio", href: "/#portfolio" },
-  { label: "About", href: "/#about" },
-  { label: "Team", href: "/#team" },
+  { label: "About", href: "/#about" },  
   { label: "Contact", href: "/#contact" },
 ];
 

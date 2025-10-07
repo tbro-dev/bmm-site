@@ -3,6 +3,12 @@ import { FC } from "react";
 import { Box, Container, Grid, Typography } from "@mui/material";
 import { FaShoppingCart, FaLaptop, FaLock, FaCircle } from "react-icons/fa";
 
+const servicesSection = {
+  Title: 'Services',
+  Description: 'This is a description of our Services',
+  CallToAction: 'Be apart of our story!'
+};
+
 const serviceItems = [
   {
     title: "E-Commerce",
@@ -30,10 +36,10 @@ const Services: FC = () => {
       <Container>
         <Box textAlign="center" mb={8}>
           <Typography variant="h4" component="h2" sx={{ textTransform: "uppercase", fontWeight: "bold" }}>
-            Services
+            {servicesSection.Title}
           </Typography>
           <Typography variant="subtitle1" color="textSecondary">
-            Lorem ipsum dolor sit amet consectetur.
+            {servicesSection.Description}
           </Typography>
         </Box>
 
@@ -41,21 +47,23 @@ const Services: FC = () => {
           {serviceItems.map((service, index) => (
             <Grid key={index} size={{ xs: 12, md: 4 }} textAlign="center">
               <Box position="relative" display="inline-block" mb={2}>
-                {/* Circle background + Icon */}
-                <FaCircle size={100} color="#1976d2" style={{ position: "absolute", left: 0, right: 0, margin: "0 auto", zIndex: 0 }} />
+
+                {/* Icon on top */}
                 <Box
                   sx={{
                     position: "relative",
-                    zIndex: 1,
-                    color: "white",
-                    fontSize: "2rem",
-                    lineHeight: "100px",
+                    zIndex: 1,                    
+                    fontSize: "2.5rem",
+                    height: "200%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    color: 'black'
                   }}
                 >
                   {service.icon}
                 </Box>
               </Box>
-
               <Typography variant="h6" sx={{ fontWeight: "bold", mt: 2 }}>
                 {service.title}
               </Typography>

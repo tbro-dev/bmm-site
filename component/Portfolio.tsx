@@ -3,42 +3,49 @@ import { FC } from "react";
 import { Box, Container, Grid, Typography } from "@mui/material";
 import { FaPlus } from "react-icons/fa";
 
+const portfolioSection = {
+  Title: 'Portfolio',
+  Description: 'This is a description of our portfolio',
+  CallToAction: 'Be apart of our story!'
+};
+
+
 // Portfolio item data
 const portfolioItems = [
   {
     title: "Threads",
     subtitle: "Illustrations",
-    img: "/media/portfolio/1.jpg?width=600&height=480&rmode=stretch",
+    img: "/media/img/paperwork.png",
     modalId: "portfolioModal1",
   },
   {
     title: "Explore",
     subtitle: "Graphic Design",
-    img: "/media/portfolio/2.jpg?width=600&height=480&rmode=stretch",
+    img: "/media/img/paperwork.png",
     modalId: "portfolioModal2",
   },
   {
     title: "Finish",
     subtitle: "Identity",
-    img: "/media/portfolio/3.jpg?width=600&height=480&rmode=stretch",
+    img: "/media/img/paperwork.png",
     modalId: "portfolioModal3",
   },
   {
     title: "Lines",
     subtitle: "Branding",
-    img: "/media/portfolio/4.jpg?width=600&height=480&rmode=stretch",
+    img: "/media/img/paperwork.png",
     modalId: "portfolioModal4",
   },
   {
     title: "Southwest",
     subtitle: "Web Design",
-    img: "/media/portfolio/5.jpg?width=600&height=480&rmode=stretch",
+    img: "/media/img/paperwork.png",
     modalId: "portfolioModal5",
   },
   {
     title: "Window",
     subtitle: "Photography",
-    img: "/media/portfolio/6.jpg?width=600&height=480&rmode=stretch",
+    img: "/media/img/paperwork.png",
     modalId: "portfolioModal6",
   },
 ];
@@ -49,10 +56,10 @@ const Portfolio: FC = () => {
       <Container>
         <Box textAlign="center" mb={8}>
           <Typography variant="h4" component="h2" sx={{ textTransform: "uppercase", fontWeight: "bold" }}>
-            Portfolio
+            {portfolioSection.Title}
           </Typography>
           <Typography variant="subtitle1" color="text.secondary">
-            Lorem ipsum dolor sit amet consectetur.
+            {portfolioSection.Description}
           </Typography>
         </Box>
 

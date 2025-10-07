@@ -1,6 +1,12 @@
 import { FC } from 'react';
 import { Box, Avatar, Container, Typography, Grid, useTheme } from '@mui/material';
 
+const aboutSection = {
+  Title: 'About',
+  Description: 'This is a description of this section',
+  CallToAction: 'Be apart of our story!'
+};
+
 const timelineData = [
   {
     date: '2009-2011',
@@ -41,10 +47,10 @@ const About: FC = () => {
       <Container>
         <Box textAlign="center" mb={6}>
           <Typography variant="h4" fontWeight="bold" textTransform="uppercase">
-            About
+            {aboutSection.Title}
           </Typography>
           <Typography variant="subtitle1" color="text.secondary">
-            Lorem ipsum dolor sit amet consectetur.
+            {aboutSection.Description}
           </Typography>
         </Box>
 
@@ -89,9 +95,7 @@ const About: FC = () => {
         {/* Final call to action */}
         <Box textAlign="center" mt={10}>
           <Typography variant="h5" fontWeight="bold" whiteSpace="pre-line">
-            Be Part
-            {'\n'}Of Our
-            {'\n'}Story!
+            {aboutSection.CallToAction}
           </Typography>
         </Box>
       </Container>
