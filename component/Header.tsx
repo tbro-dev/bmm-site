@@ -8,7 +8,7 @@ const Header: FC = () => {
       component="header"
       id="header"
       sx={{
-        backgroundImage: "url('/path/to/your/background.jpg')", // optional
+        backgroundImage: "url('/path/to/your/background.jpg')", 
         backgroundSize: "cover",
         backgroundPosition: "center",
         minHeight: "100vh",
