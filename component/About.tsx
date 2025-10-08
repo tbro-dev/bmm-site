@@ -13,14 +13,14 @@ const timelineData = [
     title: 'Our Humble Beginnings',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!',
-    image: '/media/about/1.jpg?width=160&height=160&rmode=stretch&token=abc',
+    image: '/media/img/paperwork.png',
   },
   {
     date: 'March 2011',
     title: 'An Agency is Born',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!',
-    image: '/media/about/2.jpg?width=160&height=160&rmode=stretch&token=abc',
+    image: '/media/img/paperwork.png',
     inverted: true,
   },
   {
@@ -28,14 +28,14 @@ const timelineData = [
     title: 'Transition to Full Service',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!',
-    image: '/media/about/3.jpg?width=160&height=160&rmode=stretch&token=abc',
+    image: '/media/img/paperwork.png',
   },
   {
     date: 'July 2020',
     title: 'Phase Two Expansion',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!',
-    image: '/media/about/4.jpg?width=160&height=160&rmode=stretch&token=abc',
+    image: '/media/img/paperwork.png',
     inverted: true,
   },
 ];

@@ -2,13 +2,20 @@
 import { FC } from "react";
 import { Box, Button, Container, Typography } from "@mui/material";
 
+
+const headerSection = {
+  Title: 'Company Name',
+  Description: 'This is a statement of our company!',
+  CallToAction: 'Click to learn more!'
+};
+
 const Header: FC = () => {
   return (
     <Box
       component="header"
       id="header"
       sx={{
-        backgroundImage: "url('/path/to/your/background.jpg')", 
+        backgroundImage: "url('media/img/backdropshot.jpg')", 
         backgroundSize: "cover",
         backgroundPosition: "center",
         minHeight: "100vh",
@@ -24,7 +31,7 @@ const Header: FC = () => {
             mb: 2,
           }}
         >
-          Welcome To Our Studio!
+          {headerSection.Description}
         </Typography>
 
         <Typography
@@ -35,7 +42,7 @@ const Header: FC = () => {
             mb: 4,
           }}
         >
-          Busy Making Media
+          {headerSection.Title}
         </Typography>
 
         <Button
@@ -51,7 +58,7 @@ const Header: FC = () => {
             fontSize: "1.1rem",
           }}
         >
-          Tell Me More
+          {headerSection.CallToAction}
         </Button>
       </Container>
     </Box>

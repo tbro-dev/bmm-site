@@ -1,3 +1,4 @@
+'use client'
 import { FC } from "react";
 import {
   Box,
@@ -12,7 +13,7 @@ import { Facebook, LinkedIn, YouTube, } from "@mui/icons-material";
 const Footer: FC = () => {
 
   const footerSection = {
-    Title: 'BusyMakingMedia 2025',
+    Title: 'Company Name 2025',
     Description: 'This is a description of this section',
     Policy: 'Coming soon...',
     UseTerms: 'Coming soon...',

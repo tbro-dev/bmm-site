@@ -1,5 +1,7 @@
 'use client'
-import { FC, useState } from "react";
+
+import { FC, useState, useEffect } from "react";
+
 import {
   AppBar,
   Box,
@@ -14,7 +16,15 @@ import {
   useTheme,
   useMediaQuery,
 } from "@mui/material";
+
 import MenuIcon from "@mui/icons-material/Menu";
+
+
+const navigationSection = {
+  Title: 'Company Name',
+  Description: 'This is a statement of our company!',
+  CallToAction: 'Click to learn more!'
+};
 
 const navItems = [
   { label: "Services", href: "/#services" },
@@ -31,6 +41,13 @@ const Navigation: FC = () => {
   const handleDrawerToggle = () => {
     setMobileOpen((prev) => !prev);
   };
+
+  const [hydrated, setHydrated] = useState(false);
+  useEffect(() => {
+    setHydrated(true);
+  }, []);
+
+  if (!hydrated) return null;
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
@@ -57,7 +74,7 @@ const Navigation: FC = () => {
       <AppBar
         position="fixed"
         sx={{
-          backgroundColor: "#212121", // dark navbar like Bootstrap dark
+          backgroundColor: "#212121",
         }}
       >
         <Container maxWidth="lg">
@@ -72,7 +89,7 @@ const Navigation: FC = () => {
                 fontWeight: "bold",
               }}
             >
-              Busy Making Media
+              {navigationSection.Title}
             </Typography>
 
             {isMobile ? (
@@ -125,8 +142,6 @@ const Navigation: FC = () => {
           {drawer}
         </Drawer>
       </Box>
-
-      {/* Add spacer for fixed AppBar */}
       <Toolbar />
     </>
   );
