@@ -4,8 +4,8 @@ import { Box, Button, Container, Typography } from "@mui/material";
 
 
 const headerSection = {
-  Title: 'Company Name',
-  Description: 'This is a statement of our company!',
+  Title: 'Busy Making Media',
+  Description: 'Audio and video content for digital platforms.',
   CallToAction: 'Click to learn more!'
 };
 
