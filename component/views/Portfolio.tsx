@@ -15,37 +15,37 @@ const portfolioItems = [
   {
     title: "Threads",
     subtitle: "Illustrations",
-    img: "/media/img/paperwork.png",
+    img: "/img/paperwork.png",
     modalId: "portfolioModal1",
   },
   {
     title: "Explore",
     subtitle: "Graphic Design",
-    img: "/media/img/paperwork.png",
+    img: "/img/paperwork.png",
     modalId: "portfolioModal2",
   },
   {
     title: "Finish",
     subtitle: "Identity",
-    img: "/media/img/paperwork.png",
+    img: "/img/paperwork.png",
     modalId: "portfolioModal3",
   },
   {
     title: "Lines",
     subtitle: "Branding",
-    img: "/media/img/paperwork.png",
+    img: "/img/paperwork.png",
     modalId: "portfolioModal4",
   },
   {
     title: "Southwest",
     subtitle: "Web Design",
-    img: "/media/img/paperwork.png",
+    img: "/img/paperwork.png",
     modalId: "portfolioModal5",
   },
   {
     title: "Window",
     subtitle: "Photography",
-    img: "/media/img/paperwork.png",
+    img: "/img/paperwork.png",
     modalId: "portfolioModal6",
   },
 ];
@@ -55,10 +55,10 @@ const Portfolio: FC = () => {
     <Box component="section" id="portfolio" sx={{ py: 10, backgroundColor: "#f5f5f5" }}>
       <Container>
         <Box textAlign="center" mb={8}>
-          <Typography variant="h4" component="h2" sx={{ textTransform: "uppercase", fontWeight: "bold" }}>
+          <Typography variant="h3" component="h3" sx={{ textTransform: "uppercase", fontWeight: "bold" }}>
             {portfolioSection.Title}
           </Typography>
-          <Typography variant="subtitle1" color="text.secondary">
+          <Typography color="text.secondary">
             {portfolioSection.Description}
           </Typography>
         </Box>
@@ -104,10 +104,10 @@ const Portfolio: FC = () => {
                 </a>
 
                 <Box textAlign="center" mt={2}>
-                  <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+                  <Typography variant="h3" sx={{ fontWeight: "bold" }}>
                     {title}
                   </Typography>
-                  <Typography variant="subtitle2" color="text.secondary">
+                  <Typography color="text.secondary">
                     {subtitle}
                   </Typography>
                 </Box>

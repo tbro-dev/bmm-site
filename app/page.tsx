@@ -1,24 +1,22 @@
-import Navigation from '@/component/Navigation';
-import Header from '@/component/Header';
-import Portfolio from '@/component/Portfolio';
-import Services from '@/component/Services';
-import About from '@/component/About';
-import Footer from '@/component/Footer';
-import Contact from '@/component/Contact';
+import Navigation from '@/component/views/Navigation';
+import Header from '@/component/views/Header';
+import Portfolio from '@/component/views/Portfolio';
+import Services from '@/component/views/Services';
+import About from '@/component/views/About';
+import Footer from '@/component/views/Footer';
+import Contact from '@/component/views/Contact';
 
 
 export default function HomePage() {
-  return (    
+  return (
     <>
-      <div>
-        <Navigation /> {/* done */}        
-        <Header /> {/* done */}
-        <Services /> {/* done */}
-        <Portfolio /> {/* done */}
-        <About /> {/* done */}
-        <Contact /> {/* done */}
-        <Footer />
-      </div>  
+      <Navigation />
+      <Header />
+      <Services />
+      <Portfolio />
+      <About />
+      <Contact />
+      <Footer />
     </>
   );
 }

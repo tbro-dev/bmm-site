@@ -51,8 +51,8 @@ const Navigation: FC = () => {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        Busy Making Media
+      <Typography sx={{ my: 2 }}>
+        {navigationSection.Title}
       </Typography>
       <List>
         {navItems.map((item) => (
@@ -79,8 +79,7 @@ const Navigation: FC = () => {
       >
         <Container maxWidth="lg">
           <Toolbar disableGutters sx={{ justifyContent: "space-between" }}>
-            <Typography
-              variant="h6"
+            <Typography             
               component="a"
               href="/#header"
               sx={{
@@ -114,10 +113,7 @@ const Navigation: FC = () => {
                       color: "inherit",
                       textDecoration: "none",
                       textTransform: "uppercase",
-                      fontWeight: 500,
-                      "&:hover": {
-                        borderBottom: "2px solid white",
-                      },
+                      fontWeight: 500,                     
                     }}
                   >
                     {item.label}

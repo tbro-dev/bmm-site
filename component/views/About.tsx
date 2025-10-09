@@ -13,14 +13,14 @@ const timelineData = [
     title: 'Our Humble Beginnings',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!',
-    image: '/media/img/paperwork.png',
+    image: '/img/paperwork.png',
   },
   {
     date: 'March 2011',
     title: 'An Agency is Born',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!',
-    image: '/media/img/paperwork.png',
+    image: '/img/paperwork.png',
     inverted: true,
   },
   {
@@ -28,14 +28,14 @@ const timelineData = [
     title: 'Transition to Full Service',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!',
-    image: '/media/img/paperwork.png',
+    image: '/img/paperwork.png',
   },
   {
     date: 'July 2020',
     title: 'Phase Two Expansion',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!',
-    image: '/media/img/paperwork.png',
+    image: '/img/paperwork.png',
     inverted: true,
   },
 ];
@@ -49,7 +49,7 @@ const About: FC = () => {
           <Typography variant="h4" fontWeight="bold" textTransform="uppercase">
             {aboutSection.Title}
           </Typography>
-          <Typography variant="subtitle1" color="text.secondary">
+          <Typography color="text.secondary">
             {aboutSection.Description}
           </Typography>
         </Box>
@@ -78,13 +78,13 @@ const About: FC = () => {
 
             <Grid size={{ xs: 12, md: 10 }}>
               <Box>
-                <Typography variant="h6" fontWeight="bold">
+                <Typography variant="h4" fontWeight="bold">
                   {item.date}
                 </Typography>
-                <Typography variant="subtitle1" gutterBottom>
+                <Typography gutterBottom>
                   {item.title}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
+                <Typography color="text.secondary">
                   {item.description}
                 </Typography>
               </Box>
@@ -94,7 +94,7 @@ const About: FC = () => {
 
         {/* Final call to action */}
         <Box textAlign="center" mt={10}>
-          <Typography variant="h5" fontWeight="bold" whiteSpace="pre-line">
+          <Typography variant="h4" fontWeight="bold" whiteSpace="pre-line">
             {aboutSection.CallToAction}
           </Typography>
         </Box>

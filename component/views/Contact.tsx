@@ -31,12 +31,9 @@ const Contact: FC = () => {
     <Box component="section" id="contact" py={10}>
       <Container maxWidth="md">
         <Box textAlign="center" mb={6}>
-          <Typography variant="h4" fontWeight="bold" textTransform="uppercase">
+          <Typography variant="h5" fontWeight="bold" textTransform="uppercase">
             Contact Us
-          </Typography>
-          <Typography variant="subtitle1" color="text.secondary">
-            Lorem ipsum dolor sit amet consectetur.
-          </Typography>
+          </Typography>          
         </Box>
 
         <form onSubmit={handleSubmit} noValidate>

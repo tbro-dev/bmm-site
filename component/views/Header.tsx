@@ -15,7 +15,7 @@ const Header: FC = () => {
       component="header"
       id="header"
       sx={{
-        backgroundImage: "url('media/img/backdropshot.jpg')", 
+        backgroundImage: "url('img/backdropshot.jpg')", 
         backgroundSize: "cover",
         backgroundPosition: "center",
         minHeight: "100vh",
@@ -26,16 +26,7 @@ const Header: FC = () => {
     >
       <Container maxWidth="md">
         <Typography
-          variant="h5"
-          sx={{
-            mb: 2,
-          }}
-        >
-          {headerSection.Description}
-        </Typography>
-
-        <Typography
-          variant="h2"
+          variant="h1"
           sx={{
             textTransform: "uppercase",
             fontWeight: "bold",
@@ -44,7 +35,14 @@ const Header: FC = () => {
         >
           {headerSection.Title}
         </Typography>
-
+        <Typography
+          sx={{
+            mb: 2,
+            fontSize: '2.25rem',            
+          }}
+        >
+          {headerSection.Description}
+        </Typography>
         <Button
           href="#services"
           variant="contained"
@@ -52,7 +50,6 @@ const Header: FC = () => {
           size="large"
           sx={{
             textTransform: "uppercase",
-            fontWeight: "bold",
             px: 4,
             py: 2,
             fontSize: "1.1rem",

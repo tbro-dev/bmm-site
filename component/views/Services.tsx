@@ -35,10 +35,10 @@ const Services: FC = () => {
     <Box component="section" id="services" sx={{ py: 10, backgroundColor: "#f9f9f9" }}>
       <Container>
         <Box textAlign="center" mb={8}>
-          <Typography variant="h4" component="h2" sx={{ textTransform: "uppercase", fontWeight: "bold" }}>
+          <Typography variant="h2" component="h2" sx={{ textTransform: "uppercase", fontWeight: "bold" }}>
             {servicesSection.Title}
           </Typography>
-          <Typography variant="subtitle1" color="textSecondary">
+          <Typography color="textSecondary">
             {servicesSection.Description}
           </Typography>
         </Box>
@@ -64,7 +64,7 @@ const Services: FC = () => {
                   {service.icon}
                 </Box>
               </Box>
-              <Typography variant="h6" sx={{ fontWeight: "bold", mt: 2 }}>
+              <Typography variant="h2" sx={{ fontWeight: "bold", mt: 2, fontSize: '1.25rem' }}>
                 {service.title}
               </Typography>
               <Typography variant="body2" color="textSecondary">
