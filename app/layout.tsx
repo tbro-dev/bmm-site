@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import "./globals.css";
-
+import RegisterTheme from "@/component/RegisterTheme";
 
 export const metadata: Metadata = {
-  title: "Busy Making Media",
-  description: "Busymakingmedia is a creative production studio specializing in audio/video content for social media.",
+  title: "Company Name",
+  description: "Description of your company here.",
 };
 
 export default function RootLayout({
@@ -15,7 +14,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {children}
+        <RegisterTheme>
+          {children}
+        </RegisterTheme>
       </body>
     </html>
   );
