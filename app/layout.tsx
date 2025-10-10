@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import RegisterTheme from "@/component/RegisterTheme";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata: Metadata = {
   title: "Company Name",
@@ -16,6 +17,7 @@ export default function RootLayout({
       <body>
         <RegisterTheme>
           {children}
+          <SpeedInsights />
         </RegisterTheme>
       </body>
     </html>
