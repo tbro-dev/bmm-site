@@ -1,6 +1,6 @@
 'use client'
 
-import { FC, useState, useEffect } from "react";
+import { FC, useState, useEffect, } from "react";
 
 import {
   AppBar,
@@ -72,19 +72,16 @@ const Navigation: FC = () => {
     <>
       <AppBar
         position="fixed"
-        sx={{
-          backgroundColor: "#212121",
-        }}
       >
         <Container maxWidth="lg">
           <Toolbar disableGutters sx={{ justifyContent: "space-between" }}>
             <Typography             
               component="a"
               href="/#header"
-              sx={{
-                color: "inherit",
+              color="secondary"
+              sx={{                
                 textDecoration: "none",
-                fontWeight: "bold",
+                //fontWeight: "bold",                
               }}
             >
               {navigationSection.Title}
@@ -108,11 +105,10 @@ const Navigation: FC = () => {
                     key={item.label}
                     component="a"
                     href={item.href}
-                    sx={{
-                      color: "inherit",
-                      textDecoration: "none",
-                      textTransform: "uppercase",
-                      fontWeight: 500,                     
+                    color="secondary"
+                    sx={{                      
+                      textDecoration: "none",                    
+                      //fontWeight: "bold",                
                     }}
                   >
                     {item.label}
