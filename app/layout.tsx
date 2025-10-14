@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import RegisterTheme from "@/component/RegisterTheme";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Raleway } from 'next/font/google';
+import { Analytics } from "@vercel/analytics/next"
 
 
 const raleway = Raleway({
@@ -26,6 +27,7 @@ export default function RootLayout({
         <RegisterTheme>
           {children}
           <SpeedInsights />
+          <Analytics />
         </RegisterTheme>
       </body>
     </html>
