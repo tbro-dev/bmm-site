@@ -8,7 +8,7 @@ import {
   Link,
   IconButton,
 } from "@mui/material";
-import { Facebook, LinkedIn, YouTube, } from "@mui/icons-material";
+import { Facebook, Instagram, LinkedIn, YouTube, } from "@mui/icons-material";
 
 const Footer: FC = () => {
 
@@ -17,9 +17,10 @@ const Footer: FC = () => {
     Description: 'This is a description of this section',
     Policy: 'Coming soon...',
     UseTerms: 'Coming soon...',
-    Facebook: 'facebook.com',
-    Instagram: 'instagram.com',
-    Youtube: 'youtube.com',
+    Facebook: 'https://www.facebook.com/profile.php?id=61580791546289',
+    Instagram: 'https://www.instagram.com/busymakingmedia/',
+    LinkedIn: 'https://www.linkedin.com/in/tylerbroussard-profile/',
+    Youtube: 'https://www.youtube.com/@busymakingmedia',
     TikTok: 'tiktok.com',
   };
 
@@ -44,6 +45,9 @@ const Footer: FC = () => {
               <Facebook />
             </IconButton>
             <IconButton onClick={() => openNewWindow(footerSection.Instagram)} aria-label="LinkedIn" color="inherit">
+              <Instagram />
+            </IconButton>
+            <IconButton onClick={() => openNewWindow(footerSection.LinkedIn)} aria-label="LinkedIn" color="inherit">
               <LinkedIn />
             </IconButton>
             <IconButton onClick={() => openNewWindow(footerSection.Youtube)} aria-label="YouTube" color="inherit">

@@ -61,9 +61,15 @@ const Navigation: FC = () => {
         <ListItem
           component="a"
           href={"/#header"}
-          sx={{ textAlign: "center" }} disablePadding>
+          sx={{ textAlign: "center", }} disablePadding>
           <ListItemButton>           
-            <ListItemText primary={navigationSection.Title} />
+            <ListItemText primary={navigationSection.Title}
+              slotProps={{
+                primary: {
+                  sx: { fontWeight: 'bold' }
+                }
+              }}
+            />
           </ListItemButton>
         </ListItem>
         {navItems.map((item, index) => (
@@ -96,7 +102,7 @@ const Navigation: FC = () => {
               color="secondary"
               sx={{                
                 textDecoration: "none",
-                //fontWeight: "bold",                
+                fontWeight: "bold",                
               }}
             >
               {navigationSection.Title}
@@ -122,7 +128,7 @@ const Navigation: FC = () => {
                     key={item.label}
                     component="a"
                     href={item.href}
-                    color="secondary"
+                    color="white"
                     sx={{                      
                       textDecoration: "none",                    
                     }}
