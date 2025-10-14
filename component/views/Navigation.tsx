@@ -1,7 +1,6 @@
 'use client'
 
 import { FC, useState, useEffect, } from "react";
-
 import {
   AppBar,
   Box,
@@ -16,8 +15,11 @@ import {
   useTheme,
   useMediaQuery,
 } from "@mui/material";
-
 import MenuIcon from "@mui/icons-material/Menu";
+import ListItem from '@mui/material/ListItem';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import InboxIcon from '@mui/icons-material/MoveToInbox';
+import MailIcon from '@mui/icons-material/Mail';
 
 const navigationSection = {
   Title: 'Busy Making Media',
@@ -48,21 +50,33 @@ const Navigation: FC = () => {
 
   if (!hydrated) return null;
 
+  /* Mobile device navigation drawer */
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography sx={{ my: 2 }}>
-        {navigationSection.Title}
-      </Typography>
+    <Box onClick={handleDrawerToggle} sx={{ width: 250, backgroundColor: '#fff' }} role="presentation" >      
       <List>
-        {navItems.map((item) => (
-          <ListItemButton
-            key={item.label}
+        <ListItem key={99}
+          component="a"
+          href={"/#header"}
+          sx={{ textAlign: "center" }} disablePadding>
+          <ListItemButton>
+            <ListItemIcon>
+              {99 % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+            </ListItemIcon>
+            <ListItemText primary={navigationSection.Title} />
+          </ListItemButton>
+        </ListItem>
+        {navItems.map((item, index) => (
+          <ListItem key={item.label}
             component="a"
             href={item.href}
-            sx={{ textAlign: "center" }}
-          >
-            <ListItemText primary={item.label} />
-          </ListItemButton>
+            sx={{ textAlign: "center" }} disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+              </ListItemIcon>
+              <ListItemText primary={item.label} />
+            </ListItemButton>
+          </ListItem>
         ))}
       </List>
     </Box>
@@ -108,7 +122,6 @@ const Navigation: FC = () => {
                     color="secondary"
                     sx={{                      
                       textDecoration: "none",                    
-                      //fontWeight: "bold",                
                     }}
                   >
                     {item.label}
@@ -118,21 +131,16 @@ const Navigation: FC = () => {
             )}
           </Toolbar>
         </Container>
-      </AppBar>
-
+      </AppBar>     
       <Box component="nav">
         <Drawer
           anchor="right"
           open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{ keepMounted: true }}
-          sx={{
-            "& .MuiDrawer-paper": { width: 240 },
-          }}
+          onClose={handleDrawerToggle}          
         >
           {drawer}
         </Drawer>
-      </Box>
+      </Box>     
       <Toolbar />
     </>
   );
