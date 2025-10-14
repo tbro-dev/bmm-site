@@ -103,6 +103,7 @@ const Navigation: FC = () => {
 
             {isMobile ? (
               <>
+                {/*
                 <IconButton
                   color="inherit"
                   edge="end"
@@ -111,7 +112,8 @@ const Navigation: FC = () => {
                 >
                   <MenuIcon />
                 </IconButton>
-              </>
+                */}
+              </> 
             ) : (
               <Box sx={{ display: "flex", gap: 2 }}>
                 {navItems.map((item) => (
