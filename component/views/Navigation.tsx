@@ -20,6 +20,10 @@ import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
+import SlowMotionVideoIcon from '@mui/icons-material/SlowMotionVideo';
+import InfoIcon from '@mui/icons-material/Info';
+import ContactPageIcon from '@mui/icons-material/ContactPage';
+import TheatersIcon from '@mui/icons-material/Theaters';
 
 const navigationSection = {
   Title: 'Busy Making Media',
@@ -28,10 +32,10 @@ const navigationSection = {
 };
 
 const navItems = [
-  { label: "Services", href: "/#services" },
-  { label: "Portfolio", href: "/#portfolio" },
-  { label: "About", href: "/#about" },  
-  { label: "Contact", href: "/#contact" },
+  { label: "Services", href: "/#services", icon: <SlowMotionVideoIcon /> },
+  { label: "Portfolio", href: "/#portfolio", icon: <TheatersIcon /> },
+  { label: "About", href: "/#about", icon: <InfoIcon /> },
+  { label: "Contact", href: "/#contact", icon: <ContactPageIcon /> },
 ];
 
 const Navigation: FC = () => {
@@ -54,14 +58,11 @@ const Navigation: FC = () => {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ width: 250, backgroundColor: '#fff' }} role="presentation" >      
       <List>
-        <ListItem key={99}
+        <ListItem
           component="a"
           href={"/#header"}
           sx={{ textAlign: "center" }} disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              {99 % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
+          <ListItemButton>           
             <ListItemText primary={navigationSection.Title} />
           </ListItemButton>
         </ListItem>
@@ -72,7 +73,7 @@ const Navigation: FC = () => {
             sx={{ textAlign: "center" }} disablePadding>
             <ListItemButton>
               <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                {item.icon}
               </ListItemIcon>
               <ListItemText primary={item.label} />
             </ListItemButton>
@@ -103,7 +104,7 @@ const Navigation: FC = () => {
 
             {isMobile ? (
               <>
-                {/*
+
                 <IconButton
                   color="inherit"
                   edge="end"
@@ -112,7 +113,7 @@ const Navigation: FC = () => {
                 >
                   <MenuIcon />
                 </IconButton>
-                */}
+
               </> 
             ) : (
               <Box sx={{ display: "flex", gap: 2 }}>

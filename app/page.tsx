@@ -6,13 +6,12 @@ import About from '@/component/views/About';
 import Footer from '@/component/views/Footer';
 import Contact from '@/component/views/Contact';
 
-
 export default function HomePage() {
   return (
     <>
       <Navigation />
       <Header />
-      <Services />
+      <Services />      
       <Portfolio />
       <About />
       <Contact />
