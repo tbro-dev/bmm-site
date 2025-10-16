@@ -13,8 +13,8 @@ import { Facebook, Instagram, LinkedIn, YouTube, } from "@mui/icons-material";
 const Footer: FC = () => {
 
   const footerSection = {
-    Title: 'Company Name 2025',
-    Description: 'This is a description of this section',
+    Title: 'Busy Making Media LLC 2025',
+    Description: 'Audio and video content for digital platforms.',
     Policy: 'Coming soon...',
     UseTerms: 'Coming soon...',
     Facebook: 'https://www.facebook.com/profile.php?id=61580791546289',

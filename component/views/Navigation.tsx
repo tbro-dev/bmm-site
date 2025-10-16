@@ -1,34 +1,33 @@
 'use client'
 
 import { FC, useState, useEffect, } from "react";
-import {
-  AppBar,
-  Box,
-  Container,
-  Drawer,
-  IconButton,
-  List,
-  ListItemButton,
-  ListItemText,
-  Toolbar,
-  Typography,
-  useTheme,
-  useMediaQuery,
-} from "@mui/material";
+import { useTheme } from "@mui/material";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import Drawer from "@mui/material/Drawer";
+import IconButton from "@mui/material/IconButton";
+import List from "@mui/material/List";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemText from "@mui/material/ListItemText";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import MenuIcon from "@mui/icons-material/Menu";
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 import SlowMotionVideoIcon from '@mui/icons-material/SlowMotionVideo';
 import InfoIcon from '@mui/icons-material/Info';
 import ContactPageIcon from '@mui/icons-material/ContactPage';
 import TheatersIcon from '@mui/icons-material/Theaters';
+import Image from 'next/image';
+
 
 const navigationSection = {
   Title: 'Busy Making Media',
   Description: 'Audio and video content for digital platforms.',
-  CallToAction: 'Click to learn more!'
+  CallToAction: 'Click to learn more!',
+  Img: '/img/logo.png'
 };
 
 const navItems = [
@@ -96,17 +95,12 @@ const Navigation: FC = () => {
       >
         <Container maxWidth="lg">
           <Toolbar disableGutters sx={{ justifyContent: "space-between" }}>
-            <Typography             
-              component="a"
-              href="/#header"
-              color="secondary"
-              sx={{                
-                textDecoration: "none",
-                fontWeight: "bold",                
-              }}
-            >
-              {navigationSection.Title}
-            </Typography>
+            <Image
+              src={navigationSection.Img}
+              alt="Image of the busy making media logo."
+              width={"100"}
+              height={"100"}
+            />
 
             {isMobile ? (
               <>
