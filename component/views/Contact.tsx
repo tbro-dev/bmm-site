@@ -70,7 +70,7 @@ const Contact: FC = () => {
                 onChange={handleChange}
               />
             </Grid>
-            <Grid size={{ xs: 12, md: 4 }}>
+            <Grid size={{ xs: 12, md: 12 }}>
               <TextField
                 required
                 fullWidth

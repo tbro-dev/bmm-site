@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import RegisterTheme from "@/component/RegisterTheme";
+import RegisterTheme from "@/component/styles/RegisterTheme";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Raleway } from 'next/font/google';
 import { Analytics } from "@vercel/analytics/next"
