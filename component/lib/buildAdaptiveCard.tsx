@@ -4,15 +4,21 @@ interface AdaptiveCardProps {
     email: string;
     phone: string;
     message: string;
+    browser: BrowserInfo | null;
     submittedAt?: string;
 }
 
+interface BrowserInfo {
+    name: string;
+    version: string;
+}
 
 const buildAdaptiveCard = ({
     name,
     email,
     phone,
     message,
+    browser,
     submittedAt = new Date().toISOString(),
 }: AdaptiveCardProps) => {
     return {
@@ -45,6 +51,11 @@ const buildAdaptiveCard = ({
             {
                 type: "TextBlock",
                 text: `**Message:** ${message}`,
+                wrap: true,
+            },
+            {
+                type: "TextBlock",
+                text: `**Browser:** ${browser ? browser.name : 'null'} - version ${browser ? browser.version : 'null'}`,
                 wrap: true,
             },
             {

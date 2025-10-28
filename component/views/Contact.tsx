@@ -12,9 +12,14 @@ import {
 import AnimatedThankYou from './AnimatedThankYou';
 import { validateForm } from '../lib/validateForm';
 import sanitizeInput from '../lib/sanitizeInput';
+import buildAdaptiveCard from '../lib/buildAdaptiveCard';
+import getUserBrowser from '../lib/getUserBrowser';
+import clientApp from '../api/clientApp';
+import CrudClient from '../lib/CrudClient';
 
 const Contact: FC = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [userBrowser] = useState(getUserBrowser());
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -40,11 +45,17 @@ const Contact: FC = () => {
     const sanitizedForm = {
       ...form,
       message: sanitizeInput(form.message),
+      browser: userBrowser,
     };
     if (isValid) {
       setSubmitted(true);
-      console.log('Form sanitized and submitted:', sanitizedForm);
-      //post to db use santizedForm
+      let cardObject = buildAdaptiveCard(sanitizedForm);
+      console.log('Form sanitized and submitted:', cardObject);
+      const teamsUrl = clientApp().teams;
+      const userEvent = new CrudClient(teamsUrl);
+      userEvent.create(false, cardObject)
+        .then(data => console.log('Contact event completed:', data))
+        .catch(err => console.error(err));
     }
   };
 
@@ -60,13 +71,13 @@ const Contact: FC = () => {
           message: '',
         });
         setErrors({ name: '', email: '', phone: '' });
-      }, 2000);
+      }, 3000);
     }
   }, [submitted]);
 
 
   return !submitted ? (
-    <Fade in={!submitted}>
+    <Fade in={!submitted} easing={{ enter: "ease-out", exit: "ease-in" }}>
       <Box component="section" id="contact" py={10}>
         <Container maxWidth="md">
           <Box textAlign="center" mb={6}>

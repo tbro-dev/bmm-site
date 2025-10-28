@@ -11,7 +11,7 @@ const AnimatedThankYou: FC = () => {
 
 
     return (
-        <Fade in={true}>
+        <Fade in={true} easing={{ enter: "ease-out", exit: "ease-in" }}>
             <Box component="section" id="contact" py={10}>
                 <Container maxWidth="md">
                     <Box textAlign="center" mb={6}>
