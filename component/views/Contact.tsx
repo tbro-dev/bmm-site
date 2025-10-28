@@ -14,10 +14,12 @@ import { validateForm } from '../lib/validateForm';
 import sanitizeInput from '../lib/sanitizeInput';
 import buildAdaptiveCard from '../lib/buildAdaptiveCard';
 import getUserBrowser from '../lib/getUserBrowser';
-import clientApp from '../api/clientApp';
 import CrudClient from '../lib/CrudClient';
 
-const Contact: FC = () => {
+type ContactProps = {
+  url: string;
+};
+const Contact: FC<ContactProps> = ({ url }) => {
   const [submitted, setSubmitted] = useState(false);
   const [userBrowser] = useState(getUserBrowser());
   const [form, setForm] = useState({
@@ -50,9 +52,8 @@ const Contact: FC = () => {
     if (isValid) {
       setSubmitted(true);
       let cardObject = buildAdaptiveCard(sanitizedForm);
-      console.log('Form sanitized and submitted:', cardObject);
-      const teamsUrl = clientApp().teams;
-      const userEvent = new CrudClient(teamsUrl);
+      console.log('Form sanitized and submitted:', cardObject);      
+      const userEvent = new CrudClient(url);
       userEvent.create(false, cardObject)
         .then(data => console.log('Contact event completed:', data))
         .catch(err => console.error(err));
@@ -74,6 +75,12 @@ const Contact: FC = () => {
       }, 3000);
     }
   }, [submitted]);
+
+  /*
+  useEffect(() => {
+    console.log(userBrowser);
+  }, [userBrowser]);
+  */
 
 
   return !submitted ? (
