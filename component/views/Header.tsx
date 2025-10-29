@@ -6,7 +6,7 @@ import { Box, Button, Container, Typography } from "@mui/material";
 
 const headerSection = {
   Title: 'Busy Making Media',
-  Description: 'Content Creation for Every Screen.',
+  Description: 'Video & Audio Production For Every Screen.',
   CallToAction: 'Click to learn more!',
   Img: '/img/stockbay.jpeg'
 };
@@ -50,7 +50,7 @@ const Header: FC = () => {
         >
           {headerSection.Title}
         </Typography>
-        <Typography
+        {/* <Typography
           sx={{
             backgroundColor: '#e0e0e086',
             borderRadius: 1,
@@ -61,7 +61,7 @@ const Header: FC = () => {
           }}
         >
           {headerSection.Description}
-        </Typography>
+        </Typography>*/}
         <Button
           href="#services"
           variant="contained"

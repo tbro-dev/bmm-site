@@ -6,7 +6,7 @@ const aboutSection = {
   Title: 'About',
   Description:
     "Busymakingmedia delivers professional video, audio, and crew services for brands, creatives, and digital platforms.",
-  CallToAction: 'Join us in shaping the future of media.',
+  CallToAction: 'Got a project in mind? Reach out and we can help.',
 };
 
 const timelineData = [
