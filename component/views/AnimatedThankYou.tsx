@@ -16,7 +16,7 @@ const AnimatedThankYou: FC = () => {
                 <Container maxWidth="md">
                     <Box textAlign="center" mb={6}>
                         <Typography variant="h5" fontWeight="bold" textTransform="uppercase">
-                            Thank you!
+                            {`Thank you! We will reach out to your soon!`}
                         </Typography>
                     </Box>
                 </Container>

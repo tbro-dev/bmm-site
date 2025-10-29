@@ -1,7 +1,7 @@
 // Services.tsx
 import { FC } from "react";
 import { Box, Container, Grid, Typography } from "@mui/material";
-import { FaShoppingCart, FaLaptop, FaLock, FaCircle } from "react-icons/fa";
+import { FaVideo, FaMusic, FaTools } from "react-icons/fa";
 
 const servicesSection = {
   Title: 'Services',
@@ -9,33 +9,35 @@ const servicesSection = {
   CallToAction: 'Be apart of our story!'
 };
 
+
 const serviceItems = [
   {
-    title: "E-Commerce",
+    title: "Video Services",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.",
-    icon: <FaShoppingCart />,
+      "We craft high-impact video content designed to engage, inspire, and perform across all platforms. This includes advertisements, social media content (landscape & portrait formats), short films, and vlogs.",
+    icon: <FaVideo />,
   },
   {
-    title: "Responsive Design",
+    title: "Audio Services",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.",
-    icon: <FaLaptop />,
+      "We provide professional audio services from start to finish, including studio-quality voiceover recording, custom music and soundtrack integration, audio editing, mixing and mastering for video and other digital media.",
+    icon: <FaMusic />,
   },
   {
-    title: "Web Security",
+    title: "Production Crew Services",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.",
-    icon: <FaLock />,
+      "Our team can operate independently or integrate into your crew, contributing as camera operators, boom pole holders, grips, lighting specialists, and editors to support your complete video and audio production process.",
+    icon: <FaTools />,
   },
 ];
+
 
 const Services: FC = () => {
   return (
     <Box component="section" id="services" sx={{ py: 10, backgroundColor: "#f9f9f9" }}>
       <Container>
         <Box textAlign="center" mb={8}>
-          <Typography variant="h2" component="h2" sx={{ textTransform: "uppercase", fontWeight: "bold" }}>
+          <Typography variant="h2" component="h2" sx={{ textTransform: "uppercase", fontWeight: "bold", mb: 2 }}>
             {servicesSection.Title}
           </Typography>
           <Typography color="textSecondary">
@@ -64,10 +66,10 @@ const Services: FC = () => {
                   {service.icon}
                 </Box>
               </Box>
-              <Typography variant="h2" sx={{ fontWeight: "bold", mt: 2, fontSize: '1.25rem' }}>
+              <Typography variant="h2" sx={{ fontWeight: "bold", mt: 2, mb: 2, fontSize: '1.25rem' }}>
                 {service.title}
               </Typography>
-              <Typography variant="body2" color="textSecondary">
+              <Typography variant="body1" color="textSecondary" textAlign={"left"}>
                 {service.description}
               </Typography>
             </Grid>

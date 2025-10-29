@@ -50,12 +50,15 @@ const Contact: FC<ContactProps> = ({ url }) => {
       browser: userBrowser,
     };
     if (isValid) {
-      setSubmitted(true);
       let cardObject = buildAdaptiveCard(sanitizedForm);
       console.log('Form sanitized and submitted:', cardObject);      
       const userEvent = new CrudClient(url);
       userEvent.create(false, cardObject)
-        .then(data => console.log('Contact event completed:', data))
+        .then(data => {
+          setSubmitted(true);
+          console.log('Contact us information submitted successfully.')
+
+        })
         .catch(err => console.error(err));
     }
   };
@@ -72,7 +75,7 @@ const Contact: FC<ContactProps> = ({ url }) => {
           message: '',
         });
         setErrors({ name: '', email: '', phone: '' });
-      }, 3000);
+      }, 10000);
     }
   }, [submitted]);
 
