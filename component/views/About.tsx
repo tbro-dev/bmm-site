@@ -14,7 +14,7 @@ const timelineData = [
     date: '2009–2025',
     title: 'Building Expertise in AV Production',
     description:
-      'Tyler Broussard spent over 15 years leading audiovisual and software development projects for the Social Security Administration. His work included producing hundreds of training products, managing studio operations, and pioneering cost-saving innovations in media delivery.',
+      'Tyler Broussard spent over 15 years leading audiovisual and software development projects. His work included producing hundreds of training products, managing studio operations, and pioneering cost-saving innovations in media delivery.',
     image: '/img/profile.jpeg',
   },
   {
