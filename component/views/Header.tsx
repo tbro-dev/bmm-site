@@ -39,11 +39,12 @@ const Header: FC = () => {
         <Typography
           variant="h1"
           sx={{
+            backgroundColor: '#e0e0e086',
+            borderRadius: 1,
             textTransform: "uppercase",
             fontWeight: "bold",
             zIndex: '1',
             position: 'relative',
-            color: 'white',
             mb: 2,
           }}
         >
@@ -51,11 +52,12 @@ const Header: FC = () => {
         </Typography>
         <Typography
           sx={{
+            backgroundColor: '#e0e0e086',
+            borderRadius: 1,
             mb: 4,
             fontSize: '2.25rem',
             zIndex: '1',
             position: 'relative',
-            color: 'white',
           }}
         >
           {headerSection.Description}
