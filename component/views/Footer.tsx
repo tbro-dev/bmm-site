@@ -57,12 +57,12 @@ const Footer: FC = () => {
 
           {/* Right: Links */}
           <Grid size={{ xs: 12, md: 4 }} textAlign={{ xs: "center", md: "right" }}>
-            <Link href="#!" underline="hover" color="text.secondary" sx={{ mr: 3 }}>
+            {/*<Link href="#!" underline="hover" color="text.secondary" sx={{ mr: 3 }}>
               {footerSection.Policy}
             </Link>
             <Link href="#!" underline="hover" color="text.secondary">
               {footerSection.UseTerms}
-            </Link>
+            </Link>*/}
           </Grid>
         </Grid>
       </Container>

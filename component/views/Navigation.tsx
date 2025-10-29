@@ -32,7 +32,7 @@ const navigationSection = {
 
 const navItems = [
   { label: "Services", href: "/#services", icon: <SlowMotionVideoIcon /> },
-  { label: "Portfolio", href: "/#portfolio", icon: <TheatersIcon /> },
+  /*{ label: "Portfolio", href: "/#portfolio", icon: <TheatersIcon /> },*/
   { label: "About", href: "/#about", icon: <InfoIcon /> },
   { label: "Contact", href: "/#contact", icon: <ContactPageIcon /> },
 ];

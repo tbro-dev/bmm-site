@@ -15,13 +15,16 @@ import sanitizeInput from '../lib/sanitizeInput';
 import buildAdaptiveCard from '../lib/buildAdaptiveCard';
 import getUserBrowser from '../lib/getUserBrowser';
 import CrudClient from '../lib/CrudClient';
+import getDeviceType from '../lib/getDeviceType';
 
 type ContactProps = {
   url: string;
 };
+
 const Contact: FC<ContactProps> = ({ url }) => {
   const [submitted, setSubmitted] = useState(false);
   const [userBrowser] = useState(getUserBrowser());
+  const [userDevice] = useState(getDeviceType());
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -48,6 +51,7 @@ const Contact: FC<ContactProps> = ({ url }) => {
       ...form,
       message: sanitizeInput(form.message),
       browser: userBrowser,
+      device: userDevice
     };
     if (isValid) {
       let cardObject = buildAdaptiveCard(sanitizedForm);
@@ -78,12 +82,6 @@ const Contact: FC<ContactProps> = ({ url }) => {
       }, 10000);
     }
   }, [submitted]);
-
-  /*
-  useEffect(() => {
-    console.log(userBrowser);
-  }, [userBrowser]);
-  */
 
 
   return !submitted ? (

@@ -1,42 +1,36 @@
 import { FC } from 'react';
 import { Box, Avatar, Container, Typography, Grid, useTheme } from '@mui/material';
 
+
 const aboutSection = {
   Title: 'About',
-  Description: 'This is a description of this section',
-  CallToAction: 'Be apart of our story!'
+  Description:
+    "Busymakingmedia delivers professional video, audio, and crew services for brands, creatives, and digital platforms.",
+  CallToAction: 'Join us in shaping the future of media.',
 };
 
 const timelineData = [
   {
-    date: '2009-2011',
-    title: 'Our Humble Beginnings',
+    date: '2009–2025',
+    title: 'Building Expertise in AV Production',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!',
-    image: '/img/paperwork.png',
+      'Tyler Broussard spent over 15 years leading audiovisual and software development projects for the Social Security Administration. His work included producing hundreds of training products, managing studio operations, and pioneering cost-saving innovations in media delivery.',
+    image: '/img/profile.jpeg',
   },
   {
-    date: 'March 2011',
-    title: 'An Agency is Born',
+    date: 'July 2025',
+    title: 'Busymakingmedia LLC Founded',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!',
-    image: '/img/paperwork.png',
+      'Tyler officially launched Busymakingmedia LLC to bring his creative and technical expertise to a broader audience. The company was founded to produce high-quality video and audio content all platforms.',
+    image: '/img/bmblogo.svg',
     inverted: true,
   },
   {
-    date: 'December 2015',
-    title: 'Transition to Full Service',
+    date: '2026 and Beyond',
+    title: 'Expanding Creative Impact',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!',
-    image: '/img/paperwork.png',
-  },
-  {
-    date: 'July 2020',
-    title: 'Phase Two Expansion',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!',
-    image: '/img/paperwork.png',
-    inverted: true,
+      'Busymakingmedia is growing into a full-service media production company, offering branded content, voiceover, sound design, and crew support. The vision is to build a collaborative creative ecosystem that empowers storytelling and drives value across platforms.',
+    image: '/img/up.svg',
   },
 ];
 
@@ -48,10 +42,7 @@ const About: FC = () => {
         <Box textAlign="center" mb={6}>
           <Typography variant="h4" fontWeight="bold" textTransform="uppercase">
             {aboutSection.Title}
-          </Typography>
-          <Typography color="text.secondary">
-            {aboutSection.Description}
-          </Typography>
+          </Typography>      
         </Box>
 
         {timelineData.map((item, index) => (

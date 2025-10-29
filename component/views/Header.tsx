@@ -6,9 +6,9 @@ import { Box, Button, Container, Typography } from "@mui/material";
 
 const headerSection = {
   Title: 'Busy Making Media',
-  Description: 'Audio and video content for digital platforms.',
+  Description: 'Content Creation for Every Screen.',
   CallToAction: 'Click to learn more!',
-  Img: '/img/backdropshot.jpg'
+  Img: '/img/stockbay.jpeg'
 };
 
 const Header: FC = () => {
@@ -19,7 +19,7 @@ const Header: FC = () => {
       sx={{
         backgroundSize: "cover",
         backgroundPosition: "center",
-        minHeight: "100vh",
+        minHeight: "95vh",
         display: "flex",
         alignItems: "center",
         textAlign: "center",
@@ -43,17 +43,19 @@ const Header: FC = () => {
             fontWeight: "bold",
             zIndex: '1',
             position: 'relative',
-            mb: 4,
+            color: 'white',
+            mb: 2,
           }}
         >
           {headerSection.Title}
         </Typography>
         <Typography
           sx={{
-            mb: 2,
+            mb: 4,
             fontSize: '2.25rem',
             zIndex: '1',
             position: 'relative',
+            color: 'white',
           }}
         >
           {headerSection.Description}

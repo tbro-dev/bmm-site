@@ -39,10 +39,7 @@ const Services: FC = () => {
         <Box textAlign="center" mb={8}>
           <Typography variant="h2" component="h2" sx={{ textTransform: "uppercase", fontWeight: "bold", mb: 2 }}>
             {servicesSection.Title}
-          </Typography>
-          <Typography color="textSecondary">
-            {servicesSection.Description}
-          </Typography>
+          </Typography>      
         </Box>
 
         <Grid container spacing={6} justifyContent="center">

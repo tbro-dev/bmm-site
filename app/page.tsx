@@ -7,7 +7,7 @@ import Services from '@/component/views/Services';
 import About from '@/component/views/About';
 import Footer from '@/component/views/Footer';
 import Contact from '@/component/views/Contact';
-import clientApp from '@/component/api/clientApp';
+import clientApp from '@/component/lib/clientApp';
 
 export default async function HomePage() {
   const appConfig = clientApp();
@@ -17,7 +17,7 @@ export default async function HomePage() {
       <Navigation />
       <Header />
       <Services />
-      <Portfolio />
+      {/* <Portfolio /> */}
       <About />
       <Contact url={appConfig.teams} />
       <Footer />

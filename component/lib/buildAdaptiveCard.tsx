@@ -5,6 +5,7 @@ interface AdaptiveCardProps {
     phone: string;
     message: string;
     browser: BrowserInfo | null;
+    device: string | null;
     submittedAt?: string;
 }
 
@@ -19,6 +20,7 @@ const buildAdaptiveCard = ({
     phone,
     message,
     browser,
+    device,
     submittedAt = new Date().toISOString(),
 }: AdaptiveCardProps) => {
     return {
@@ -56,6 +58,11 @@ const buildAdaptiveCard = ({
             {
                 type: "TextBlock",
                 text: `**Browser:** ${browser ? browser.name : 'null'} - version ${browser ? browser.version : 'null'}`,
+                wrap: true,
+            },
+            {
+                type: "TextBlock",
+                text: `**Device:** ${device ? device : 'null'}`,
                 wrap: true,
             },
             {
